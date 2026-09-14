@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --paper: #EDEAE2;
+  --paper-dim: #E2DED2;
+  --ink: #17232C;
+  --ink-soft: #33424E;
+  --line: #C9C3B3;
+  --teal: #3F7D74;
+  --copper: #B97A3C;
+  --max-width: 880px;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+a { color: var(--teal); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  margin: 0 0 0.4em;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+.logo {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.site-header nav a {
+  color: var(--ink-soft);
+  margin-left: 28px;
+  font-size: 0.95rem;
+}
+.site-header nav a:hover { color: var(--teal); }
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 88px 0 64px;
+  border-bottom: 1px solid var(--line);
+}
+.hero h1 {
+  font-size: clamp(2.1rem, 5vw, 3rem);
+  max-width: 14ch;
+}
+.hero .tagline {
+  max-width: 52ch;
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  margin: 0 0 28px;
+}
+.btn {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--paper);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 12px 22px;
+  cursor: pointer;
+}
+.btn:hover {
+  background: var(--teal);
+  border-color: var(--teal);
+  text-decoration: none;
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 56px 0;
+  border-bottom: 1px solid var(--line);
+}
+.section:last-of-type { border-bottom: none; }
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 28px;
+}
+.section > .container > p {
+  max-width: 62ch;
+  color: var(--ink-soft);
+}
+
+/* ---------- Projects ---------- */
+.grid {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.card {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+}
+.card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.card h3 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+.card .category {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--copper);
+  white-space: nowrap;
+}
+.card .role {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.card .desc {
+  margin: 12px 0 14px;
+  max-width: 68ch;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  border: 1px solid var(--line);
+  padding: 3px 9px;
+  background: var(--paper-dim);
+}
+.links a {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+.link-sep {
+  display: inline-block;
+  width: 16px;
+}
+.loading, .error {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  padding: 20px 0;
+}
+.error { color: var(--copper); }
+
+/* ---------- Skills ---------- */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.skill-pill {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  border: 1px solid var(--ink);
+  padding: 6px 14px;
+  color: var(--ink);
+}
+
+/* ---------- Contact ---------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+}
+.contact-form label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin: 14px 0 6px;
+}
+.contact-form label:first-child { margin-top: 0; }
+.contact-form input,
+.contact-form textarea {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 10px 12px;
+  color: var(--ink);
+}
+.contact-form textarea { resize: vertical; }
+.contact-form .btn {
+  margin-top: 20px;
+  align-self: flex-start;
+}
+.status {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--teal);
+  min-height: 1.2em;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  padding: 28px 0 40px;
+}
+.site-footer p {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* ---------- Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 560px) {
+  .site-header nav a { margin-left: 16px; }
+  .hero { padding: 64px 0 48px; }
+}
