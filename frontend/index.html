@@ -15,6 +15,7 @@
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
+        <a href="#connect">Connect</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -35,11 +36,36 @@
   <section id="about" class="section">
     <div class="container">
       <h2>About</h2>
-      <p class="lede">
-        I'm a Computer Science and Engineering student who likes building things end to end —
-        from desktop apps and embedded hardware to full-stack web platforms. Below are a few
-        of the projects I've worked on, along with the skills behind them.
-      </p>
+      <div class="about-layout">
+        <p class="lede">
+          I'm a Computer Science and Engineering student who likes building things end to end —
+          from desktop apps and embedded hardware to full-stack web platforms. I enjoy taking a
+          project from idea to something actually running, whether that's a database schema, an
+          API, or the UI on top of it.
+        </p>
+        <dl class="about-facts">
+          <div>
+            <dt>College Year</dt>
+            <!-- TODO: replace with your actual year, e.g. "3rd Year" -->
+            <dd>[Your Year]</dd>
+          </div>
+          <div>
+            <dt>Focus Areas</dt>
+            <!-- TODO: replace with your actual interests -->
+            <dd>[Your development / coding interests]</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="achievements">
+        <h3>Achievements</h3>
+        <ul class="achievements-list">
+          <!-- TODO: add your achievements here, one <li> each, e.g.:
+          <li>Winner — XYZ Hackathon 2026</li>
+          <li>Published a paper on ABC at XYZ conference</li>
+          -->
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -80,9 +106,29 @@
     </div>
   </section>
 
-  <footer class="site-footer">
+  <section id="connect" class="section section-dark">
     <div class="container">
+      <h2>Connect</h2>
+      <p class="lede lede-dark">Find me elsewhere online.</p>
+      <ul id="social-links" class="social-links">
+        <!-- TODO: fill in your real URLs. Leave href="#" ones out, or delete unused entries. -->
+        <li><a href="#" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="#" target="_blank" rel="noopener">Twitter / X</a></li>
+        <li><a href="mailto:you@example.com">Email</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
       <p>&copy; <span id="year"></span> Vijai. Built with HTML, CSS, JS, Node/Express, PostgreSQL.</p>
+      <ul class="footer-social">
+        <!-- TODO: same links as the Connect section above -->
+        <li><a href="#" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:you@example.com">Email</a></li>
+      </ul>
     </div>
   </footer>
 
