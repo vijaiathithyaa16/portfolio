@@ -1,121 +1,69 @@
-# Portfolio — Vijai
+# Vijai Athithyaa S — Portfolio
 
-Full-stack personal portfolio.
+A full-stack personal portfolio showcasing my projects, skills, and background —
+built from the ground up with a plain HTML/CSS/JS frontend and a Node/Express +
+PostgreSQL backend.
 
-- **Frontend:** plain HTML / CSS / JavaScript (`/frontend`)
-- **Backend:** Node.js + Express (`/backend`)
-- **Database:** PostgreSQL (projects, skills, contact messages)
-- **Deploy:** frontend → Vercel, backend + DB → Railway
+**Live site:** [portfolio.vercel.app]((https://frontend-semi17.vercel.app))
 
-## Project structure
+![Portfolio preview](docs/preview.png)
+<!-- TODO: add a screenshot at docs/preview.png, or remove this line -->
 
-```
-portfolio/
-  frontend/
-    index.html
-    css/style.css
-    js/config.js      <- API_BASE_URL lives here
-    js/main.js
-    vercel.json
-  backend/
-    server.js
-    db.js
-    schema.sql
-    seed.js
-    routes/
-      projects.js
-      skills.js
-      messages.js
-    .env.example
-```
+---
 
-## 1. Run locally
+## About
 
-### Database
-Install PostgreSQL locally, or spin up a free instance now on Railway and use
-its connection string for local dev too — either works.
+I'm a Computer Science and Engineering student who builds things end to end —
+from desktop software and embedded hardware to full-stack web platforms. This
+site is both a showcase of that work and a project in its own right: a real
+frontend/backend/database stack, deployed and live.
 
-Create a database, then:
+## Features
+
+- Projects and skills pulled dynamically from a PostgreSQL database via a REST API
+- Working contact form that stores messages server-side
+- Responsive, single-page layout with smooth scroll navigation
+- Clean separation between frontend (static) and backend (API), deployed independently
+
+## Tech Stack
+
+| Layer      | Technology                          |
+|------------|--------------------------------------|
+| Frontend   | HTML, CSS, JavaScript (no framework) |
+| Backend    | Node.js, Express                     |
+| Database   | PostgreSQL                           |
+| Hosting    | Vercel (frontend), Railway (backend + DB) |
+
+## Featured Projects
+
+- **Campus Placement Management System** — Java Swing desktop app with MySQL/JDBC, built as a course project
+- **Offline-First E-Waste Collector & EPR Compliance Platform** — hackathon project (Megathon, Reverse Logistics track) with a WhatsApp-integrated chatbot interface
+- **Solar-Powered PCM Vaccine Cold Chain** — startup concept combining phase-change materials, Peltier cooling, and ESP32 control logic
+
+See the [live site]((https://frontend-semi17.vercel.app)) for full details on each.
+<!-- TODO: replace with your actual Vercel URL -->
+
+## Running Locally
 
 ```bash
-cd backend
-cp .env.example .env
-# edit .env: set DATABASE_URL to your local or Railway connection string
-```
-
-### Backend
-
-```bash
+# Backend
 cd backend
 npm install
-npm run seed     # creates tables + inserts your 3 starter projects and skills
-npm run dev       # starts the API on http://localhost:5000
-```
+cp .env.example .env   # fill in DATABASE_URL
+npm run seed
+npm run dev
 
-Check it's alive: open `http://localhost:5000/api/health`.
-
-### Frontend
-
-`frontend/js/config.js` already points at `http://localhost:5000/api` by
-default. Just open `frontend/index.html` with a local server, e.g.:
-
-```bash
+# Frontend (separate terminal)
 cd frontend
 npx serve .
-# or use the VS Code "Live Server" extension
 ```
 
-(Opening the HTML file directly with `file://` also works for viewing, but a
-local server avoids occasional CORS quirks.)
+Full setup and deployment notes are in [`SETUP.md`](./SETUP.md).
+<!-- TODO: if you keep both READMEs, rename your current dev-setup README.md to SETUP.md so this one takes its place -->
 
-## 2. Deploy the database + backend on Railway
+## Contact
 
-1. Go to railway.app → **New Project** → **Provision PostgreSQL**.
-2. Copy the `DATABASE_URL` Railway gives you (Postgres service → **Connect** tab).
-3. In the same Railway project, **New → GitHub Repo** (or **Empty Service** +
-   deploy from CLI) pointing at the `backend/` folder of this repo.
-4. Set environment variables on the backend service:
-   - `DATABASE_URL` → the Postgres connection string from step 2
-   - `CORS_ORIGIN` → your Vercel frontend URL (you'll get this in step 3 below;
-     you can add it after the first deploy and redeploy)
-5. Railway auto-detects Node and runs `npm install` + `npm start`. Once it's
-   live, note the public backend URL, e.g. `https://portfolio-backend-production.up.railway.app`.
-6. Run the seed once against the production DB (from your machine, with
-   `DATABASE_URL` in `backend/.env` set to the Railway string):
-   ```bash
-   cd backend
-   npm run seed
-   ```
-
-## 3. Deploy the frontend on Vercel
-
-1. Edit `frontend/js/config.js` and set:
-   ```js
-   const API_BASE_URL = "https://<your-railway-backend-domain>/api";
-   ```
-2. Push to GitHub, then in Vercel: **New Project** → import the repo → set
-   **Root Directory** to `frontend`. Framework preset: "Other" (static site).
-3. Deploy. Vercel gives you a URL like `https://your-portfolio.vercel.app`.
-4. Go back to Railway and set `CORS_ORIGIN` to that Vercel URL, then redeploy
-   the backend so it accepts requests from it.
-
-## API reference
-
-| Method | Route              | Description                  |
-|--------|--------------------|-------------------------------|
-| GET    | `/api/health`       | Health check                  |
-| GET    | `/api/projects`     | List all projects             |
-| GET    | `/api/projects/:id` | Get one project               |
-| POST   | `/api/projects`     | Create a project              |
-| PUT    | `/api/projects/:id` | Update a project              |
-| DELETE | `/api/projects/:id` | Delete a project              |
-| GET    | `/api/skills`       | List all skills               |
-| POST   | `/api/messages`     | Submit the contact form       |
-
-## Adding / editing your own projects
-
-Easiest path: edit the `projects` array in `backend/seed.js` and re-run
-`npm run seed` (this truncates and re-inserts, so it's safe to run repeatedly
-while you're still curating content). Once the site is live and you want to
-add projects without re-seeding, `POST /api/projects` works too — you could
-wire up a small admin form later, or just use `curl`/Postman for now.
+<!-- TODO: add your real links -->
+- GitHub: [vijaiathithyaa16](https://github.com/vijaiathithyaa16)
+- LinkedIn: [Vijai Athithyaa S]([https://linkedin.com/in/your-name](https://www.linkedin.com/in/vijai-athithyaa-s-004482381/))
+- Email: vijaiathithyaa1612@gmail.com
