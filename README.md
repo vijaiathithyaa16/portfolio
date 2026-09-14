@@ -4,10 +4,7 @@ A full-stack personal portfolio showcasing my projects, skills, and background â
 built from the ground up with a plain HTML/CSS/JS frontend and a Node/Express +
 PostgreSQL backend.
 
-**Live site:** [portfolio.vercel.app]((https://frontend-semi17.vercel.app))
-
-![Portfolio preview](docs/preview.png)
-<!-- TODO: add a screenshot at docs/preview.png, or remove this line -->
+**Live site:** [portfolio.vercel.app](https://frontend-semi17.vercel.app)
 
 ---
 
@@ -65,5 +62,5 @@ Full setup and deployment notes are in [`SETUP.md`](./SETUP.md).
 
 <!-- TODO: add your real links -->
 - GitHub: [vijaiathithyaa16](https://github.com/vijaiathithyaa16)
-- LinkedIn: [Vijai Athithyaa S]([https://linkedin.com/in/your-name](https://www.linkedin.com/in/vijai-athithyaa-s-004482381/))
+- LinkedIn: [Vijai Athithyaa S](https://www.linkedin.com/in/vijai-athithyaa-s-004482381/)
 - Email: vijaiathithyaa1612@gmail.com
