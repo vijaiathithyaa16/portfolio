@@ -21,17 +21,21 @@
   </header>
 
   <section class="hero">
-    <div class="container">
-      <h1>Hi, I'm Vijai.</h1>
-      <p class="tagline">CSE student building full-stack apps, embedded systems, and hackathon projects.</p>
-      <a href="#projects" class="btn">View Projects</a>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <h1 class="reveal reveal-1">Hi, I'm <span class="accent-text">Vijai</span>.</h1>
+      <p class="tagline reveal reveal-2">CSE student building full-stack apps, embedded systems, and hackathon projects.</p>
+      <div class="hero-actions reveal reveal-3">
+        <a href="#projects" class="btn btn-solid">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
     </div>
   </section>
 
   <section id="about" class="section">
     <div class="container">
       <h2>About</h2>
-      <p>
+      <p class="lede">
         I'm a Computer Science and Engineering student who likes building things end to end —
         from desktop apps and embedded hardware to full-stack web platforms. Below are a few
         of the projects I've worked on, along with the skills behind them.
@@ -39,7 +43,7 @@
     </div>
   </section>
 
-  <section id="projects" class="section">
+  <section id="projects" class="section section-dark">
     <div class="container">
       <h2>Projects</h2>
       <div id="projects-grid" class="grid">
